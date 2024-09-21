@@ -10,11 +10,7 @@ from langfuse.llama_index import LlamaIndexCallbackHandler
 
 load_dotenv()
 
-langfuse_callback_handler = LlamaIndexCallbackHandler(
-    public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
-    secret_key=os.environ["LANGFUSE_SECRET_KEY"],
-    host=os.environ["LANGFUSE_HOST"]
-)
+langfuse_callback_handler = LlamaIndexCallbackHandler()
 Settings.callback_manager = CallbackManager([langfuse_callback_handler])
 
 # Load documents from a directory (you can change this path as needed)
